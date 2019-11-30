@@ -55,29 +55,8 @@ public class RequiresHttp {
         return response;
     }
 
-    /*public String fazerLogin(String nome, String senha) {
-        String response = null;
-        String urlReq = "http://viacep.com.br/ws/" + 573017160 + "/json/";
 
-        try {
-            URL url = new URL(urlReq);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-
-            // read the response
-            InputStream in = new BufferedInputStream(conn.getInputStream());
-            response = convertStreamToString(in);
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return response;
-    }*/
-
-    /*public String buscarRaking() {
+    public String buscarRaking() {
 
 
         try {
@@ -104,11 +83,14 @@ public class RequiresHttp {
         try {
             URL url = new URL(urlReq);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
             conn.setRequestMethod("POST");
-            conn.setRequestProperty("nome", nome);
-            conn.setRequestProperty("celular", celular);
-            conn.setRequestProperty("email", email);
-            conn.setRequestProperty("senha", senha);
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+            String body = "nome=" + nome + "&email=" + email + "&senha=" + senha + "&numero=" + celular;
+
+            conn.getOutputStream().write(body.getBytes());
 
             // read the response
             InputStream in = new BufferedInputStream(conn.getInputStream());
@@ -123,15 +105,19 @@ public class RequiresHttp {
         return response;
     }
 
-    public String atualizarPontuacao(int id, int pontuacao) {
-
+    public String atualizarPontuacao(String id, String pontuacao) {
 
         try {
-            URL url = new URL(urlReq);
+            URL url = new URL(urlReq + "/usuario/atualizarpontos");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
             conn.setRequestMethod("PATCH");
-            conn.setRequestProperty("id", id+"");
-            conn.setRequestProperty("pontuacao", pontuacao+"");
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+            String body = "id=" + id + "&pontuacao=" + pontuacao;
+
+            //conn.getOutputStream().write(body.getBytes());
 
             // read the response
             InputStream in = new BufferedInputStream(conn.getInputStream());
@@ -144,7 +130,7 @@ public class RequiresHttp {
         }
 
         return response;
-    }*/
+    }
 
     private String convertStreamToString(InputStream is) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));

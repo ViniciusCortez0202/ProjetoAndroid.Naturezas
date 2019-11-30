@@ -37,7 +37,7 @@ public class Logar extends AsyncTask<String, Object, String> {
         s = s.substring(1, s.length()-2);
         try {
             JSONObject json = new JSONObject(s);
-
+            Log.i("valor", s);
             if(json.has("mensagem")){
                 String res = json.getString("mensagem");
                 Toast.makeText(reference.get(), res, Toast.LENGTH_LONG).show();

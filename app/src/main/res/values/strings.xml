@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Naturezas</string>
+    <string name="pontuacao_atual">pontuacaoAtual</string>
+    <string name="pontuacao_maior">nova_pontuacao</string>
+    <string name="nome_usuario">nome</string>
+    <string name="id_usuario">id</string>
+    <string name="email_usuario">email</string>
 </resources>

@@ -2,6 +2,7 @@ package com.projeto.naturezas.services;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
@@ -9,6 +10,8 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.lang.ref.WeakReference;
+
+import com.projeto.naturezas.R;
 import com.projeto.naturezas.views.LoginActivity;
 
 public class Logar extends AsyncTask<String, Object, String> {
@@ -42,11 +45,17 @@ public class Logar extends AsyncTask<String, Object, String> {
                 String res = json.getString("mensagem");
                 Toast.makeText(reference.get(), res, Toast.LENGTH_LONG).show();
             } else {
-                //Intent intent = new Intent(this.reference.get().getClass();
                 String nome = json.getString("usuario");
                 String email = json.getString("email");
                 int id = json.getInt("id");
-                Toast.makeText(reference.get(), nome + ", " + email + ", " + id, Toast.LENGTH_LONG).show();
+
+                SharedPreferences sp = this.reference.get().getSharedPreferences
+                        (this.reference.get().getString(R.string.app_name), Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putInt(this.reference.get().getString(R.string.id_usuario), id);
+                editor.putString(this.reference.get().getString(R.string.nome_usuario), nome);
+                editor.putString(this.reference.get().getString(R.string.email_usuario), email);
+                editor.commit();
             }
 
         } catch (JSONException e) {

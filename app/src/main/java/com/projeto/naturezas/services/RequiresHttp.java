@@ -117,7 +117,7 @@ public class RequiresHttp {
 
             String body = "id=" + id + "&pontuacao=" + pontuacao;
 
-            //conn.getOutputStream().write(body.getBytes());
+            conn.getOutputStream().write(body.getBytes());
 
             // read the response
             InputStream in = new BufferedInputStream(conn.getInputStream());

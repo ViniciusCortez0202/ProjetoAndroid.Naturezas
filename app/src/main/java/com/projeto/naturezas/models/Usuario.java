@@ -17,6 +17,13 @@ public class Usuario {
         this.senha = senha;
     }
 
+    public Usuario(String nome, String email, String numero, String senha) {
+        this.nome = nome;
+        this.email = email;
+        this.numero = numero;
+        this.senha = senha;
+    }
+
     public Usuario() {
     }
 

@@ -38,9 +38,7 @@ public class RequiresHttp {
 
             String body = "email=" + email + "&senha=" + senha;
 
-            OutputStreamWriter out = new OutputStreamWriter(conn.getOutputStream());
-            out.write(body);
-            out.flush();
+            conn.getOutputStream().write(body.getBytes());
 
             // read the response
             InputStream in = new BufferedInputStream(conn.getInputStream());
@@ -81,7 +79,7 @@ public class RequiresHttp {
 
 
         try {
-            URL url = new URL(urlReq);
+            URL url = new URL(urlReq + "usuario/criarconta");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             conn.setDoInput(true);
@@ -102,7 +100,8 @@ public class RequiresHttp {
             e.printStackTrace();
         }
 
-        return response;
+        if(response == null) return "teste";
+        else return response;
     }
 
     public String atualizarPontuacao(String id, String pontuacao) {

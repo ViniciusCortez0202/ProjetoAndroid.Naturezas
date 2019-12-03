@@ -18,8 +18,8 @@ public class CriarConta extends AsyncTask<Usuario, Object, String> {
 
     WeakReference<LoginActivity> reference;
 
-    CriarConta(Context context){
-        this.reference = new WeakReference<>((LoginActivity) context);
+    public CriarConta(Context context){
+        this.reference = new WeakReference<LoginActivity>((LoginActivity) context);
     }
 
 
@@ -29,11 +29,13 @@ public class CriarConta extends AsyncTask<Usuario, Object, String> {
         Usuario usuario = usuarios[0];
 
         RequiresHttp require = new RequiresHttp();
-        return require.criarContaUsuario(usuario.getNome(), usuario.getEmail(),
-                usuario.getSenha(), usuario.getNumero());
+        String res = require.criarContaUsuario(usuario.getNome(), usuario.getEmail(),
+               usuario.getSenha(), usuario.getNumero());
+        Log.i("Valor", res);
+        return res;
     }
 
-    @Override
+    /*@Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
 
@@ -43,12 +45,12 @@ public class CriarConta extends AsyncTask<Usuario, Object, String> {
             if(json.has("mensagem")){
                 Toast.makeText(this.reference.get(), json.getString("mensagem"), Toast.LENGTH_LONG).show();
             } else {
-
+                String numeroConfirmacao = String.valueOf(json.getInt("numeroConfirmacao"));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
-    }
+    }*/
 }

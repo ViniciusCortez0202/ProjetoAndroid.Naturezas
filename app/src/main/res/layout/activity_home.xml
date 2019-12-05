@@ -30,5 +30,16 @@
         android:text="INICIAR PARTIDA"
         android:id="@+id/btn_init"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="127dp"
+        android:layout_height="69dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="40px"
+        android:background="@android:color/holo_blue_dark"
+        android:editable="false"
+        android:text="Login"
+        android:id="@+id/btn_login"/>
+
+
 
 </LinearLayout>

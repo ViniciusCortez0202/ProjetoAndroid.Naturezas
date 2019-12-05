@@ -10,12 +10,15 @@ import android.telephony.SmsMessage;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
+
 import com.projeto.naturezas.R;
 
 import java.nio.charset.CharacterCodingException;
 
 public class SMSIntercept extends BroadcastReceiver {
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onReceive(Context context, Intent intent) {
 // Get the SMS message.

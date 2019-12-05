@@ -27,7 +27,8 @@
         android:layout_marginTop="40px"
         android:background="@android:color/holo_blue_dark"
         android:editable="false"
-        android:text="INICIAR PARTIDA" />
+        android:text="INICIAR PARTIDA"
+        android:id="@+id/btn_init"/>
 
 
 </LinearLayout>

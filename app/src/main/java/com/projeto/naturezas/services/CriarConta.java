@@ -1,11 +1,13 @@
 package com.projeto.naturezas.services;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.JsonReader;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.projeto.naturezas.R;
 import com.projeto.naturezas.models.Usuario;
 import com.projeto.naturezas.views.LoginActivity;
 
@@ -31,11 +33,11 @@ public class CriarConta extends AsyncTask<Usuario, Object, String> {
         RequiresHttp require = new RequiresHttp();
         String res = require.criarContaUsuario(usuario.getNome(), usuario.getEmail(),
                usuario.getSenha(), usuario.getNumero());
-        Log.i("Valor", res);
+
         return res;
     }
 
-    /*@Override
+    @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
 
@@ -46,11 +48,16 @@ public class CriarConta extends AsyncTask<Usuario, Object, String> {
                 Toast.makeText(this.reference.get(), json.getString("mensagem"), Toast.LENGTH_LONG).show();
             } else {
                 String numeroConfirmacao = String.valueOf(json.getInt("numeroConfirmacao"));
+                SharedPreferences sp = this.reference.get().getSharedPreferences
+                        (this.reference.get().getString(R.string.numero_confirmacao), Context.MODE_PRIVATE);
+                 SharedPreferences.Editor edtior = sp.edit();
+                 edtior.putString("numeroConfirmacao", numeroConfirmacao);
+                 edtior.commit();
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
-    }*/
+    }
 }

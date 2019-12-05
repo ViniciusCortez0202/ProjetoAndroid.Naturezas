@@ -79,7 +79,7 @@ public class RequiresHttp {
 
 
         try {
-            URL url = new URL(urlReq + "usuario/criarconta");
+            URL url = new URL(urlReq + "/usuario/criarconta");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             conn.setDoInput(true);
@@ -100,8 +100,7 @@ public class RequiresHttp {
             e.printStackTrace();
         }
 
-        if(response == null) return "teste";
-        else return response;
+        return response;
     }
 
     public String atualizarPontuacao(String id, String pontuacao) {

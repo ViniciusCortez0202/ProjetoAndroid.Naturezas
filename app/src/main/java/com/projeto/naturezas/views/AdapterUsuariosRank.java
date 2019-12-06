@@ -40,7 +40,7 @@ public class AdapterUsuariosRank extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         // Inflar a view
         View view = LayoutInflater.from(context).inflate(, parent, false);
-
+        //comentario aletorio pra tentar dar comit
 
 
         return view;

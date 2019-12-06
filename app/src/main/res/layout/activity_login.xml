@@ -19,11 +19,10 @@
         android:id="@+id/login_senha"
         android:hint="Digite sua senha" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btn_login_logar"
-        android:layout_width="127dp"
+        android:layout_width="match_parent"
         android:layout_height="69dp"
-        android:layout_marginLeft="135dp"
         android:layout_marginTop="160dp"
         android:background="@android:color/holo_blue_dark"
         android:editable="false"

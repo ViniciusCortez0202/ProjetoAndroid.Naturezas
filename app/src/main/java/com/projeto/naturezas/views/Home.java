@@ -10,19 +10,23 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.projeto.naturezas.R;
+import com.projeto.naturezas.services.Ranking;
+
+import java.util.zip.Inflater;
 
 public class Home extends AppCompatActivity {
 
     private final int REQUEST_CODE_PERMISSION_SMS = 10;
 
-    public Home(){
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +52,9 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        openOptionsMenu();
 
     }
-
 
     private void verificarLogin(){//vefirica se o usuario ja está logado
         SharedPreferences sp = this.getSharedPreferences(this.getString(R.string.app_name), Context.MODE_PRIVATE);
@@ -78,6 +82,25 @@ public class Home extends AppCompatActivity {
                         REQUEST_CODE_PERMISSION_SMS);
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_toobar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id_item = item.getItemId();
+
+        if(id_item == R.id.menu_ranking){
+            Ranking ranking = new Ranking(this);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

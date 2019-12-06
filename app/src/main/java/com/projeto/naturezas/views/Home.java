@@ -26,7 +26,7 @@ public class Home extends AppCompatActivity {
     }
 
 
-    private void verificarLogin(){
+    private void verificarLogin(){//vefirica se o usuario ja está logado
         SharedPreferences sp = this.getSharedPreferences(this.getString(R.string.app_name), Context.MODE_PRIVATE);
 
         if(sp.getInt(this.getString(R.string.usuario_logado), 0) == 1){

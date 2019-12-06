@@ -3,13 +3,11 @@ package com.projeto.naturezas.services;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.util.JsonReader;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.projeto.naturezas.R;
 import com.projeto.naturezas.models.Usuario;
-import com.projeto.naturezas.views.LoginActivity;
+import com.projeto.naturezas.views.CriarContaActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,10 +16,10 @@ import java.lang.ref.WeakReference;
 
 public class CriarConta extends AsyncTask<Usuario, Object, String> {
 
-    WeakReference<LoginActivity> reference;
+    WeakReference<CriarContaActivity> reference;
 
     public CriarConta(Context context){
-        this.reference = new WeakReference<LoginActivity>((LoginActivity) context);
+        this.reference = new WeakReference<CriarContaActivity>((CriarContaActivity) context);
     }
 
 

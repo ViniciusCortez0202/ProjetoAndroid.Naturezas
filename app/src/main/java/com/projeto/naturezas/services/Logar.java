@@ -57,7 +57,7 @@ public class Logar extends AsyncTask<String, Object, String> {
                 editor.putInt(this.reference.get().getString(R.string.id_usuario), id);
                 editor.putString(this.reference.get().getString(R.string.nome_usuario), nome);
                 editor.putString(this.reference.get().getString(R.string.email_usuario), email);
-                editor.putExtra(this.reference.get().getString(R.string.usuario_logado), 1);
+                editor.putInt(this.reference.get().getString(R.string.usuario_logado), 1);
                 editor.commit();
                 Intent intent = new Intent(this.reference.get(), Home.class);
                 this.reference.get().startActivity(intent);

@@ -1,5 +1,7 @@
 package com.projeto.naturezas.models;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 
 public class Usuario implements Serializable {

@@ -15,6 +15,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,11 +28,13 @@ import com.projeto.naturezas.services.*;
 import com.projeto.naturezas.models.Usuario;
 import com.projeto.naturezas.services.CriarConta;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 public class CadastrarActivity extends AppCompatActivity {
 
     private String caminhoFoto;
+    private String stringBase64;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +86,7 @@ public class CadastrarActivity extends AppCompatActivity {
                 ImageView imageViewFoto = findViewById(R.id.cadastro_imagem);
                 String foto = imageViewFoto.getTag().toString();
 
-                Usuario usuario = new Usuario(nome, email, numero, senha, foto);
+                Usuario usuario = new Usuario(nome, email, numero, senha, stringBase64);
 
                 cadastrarUsuario(usuario);
 
@@ -108,6 +111,11 @@ public class CadastrarActivity extends AppCompatActivity {
         Bitmap bitmap = BitmapFactory.decodeFile(foto);
         imageView.setImageBitmap(bitmap);
         imageView.setTag(foto);
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+        this.stringBase64 = Base64.encodeToString(byteArray, 0);
     }
 
 }

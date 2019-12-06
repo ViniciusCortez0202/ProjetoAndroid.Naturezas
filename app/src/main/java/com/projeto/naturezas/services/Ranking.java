@@ -3,6 +3,7 @@ package com.projeto.naturezas.services;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -16,7 +17,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Ranking extends AsyncTask<String, Object, String> {
 
@@ -39,18 +43,22 @@ public class Ranking extends AsyncTask<String, Object, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        Usuario usuario[] = new Usuario[30];
+        List<Usuario> usuario = new ArrayList<>();
         try {
             JSONArray json = new JSONArray(s);
 
             if(json.length() > 0){
                 for (int i = 0; i < json.length(); i++){
-                    usuario[i].setNome(json.getJSONObject(i).getString("usu_nome"));
-                    usuario[i].setPontuacao( json.getJSONObject(i).getInt("usu_pontuacao"));
+                    Usuario u = new Usuario();
+                    u.setFoto(json.getJSONObject(i).getString("usu_foto"));
+                    u.setNome(json.getJSONObject(i).getString("usu_nome"));
+                    u.setPontuacao( json.getJSONObject(i).getInt("usu_pontuacao"));
+                    usuario.add(u);
                 }
             }
             Intent intent = new Intent(this.reference.get(), Ranking.class);
-            intent.putExtra(this.reference.get().getString(R.string.ranking_geral), usuario);
+            intent.putExtra(this.reference.get().getString(R.string.ranking_geral),(Serializable) usuario);
+            this.reference.get().startActivity(intent);
             this.reference.get().startActivity(intent);
 
         } catch (JSONException e) {

@@ -25,9 +25,8 @@
         android:layout_height="69dp"
         android:layout_marginLeft="135dp"
         android:layout_marginTop="40px"
-        android:background="@mipmap/background1"
+
         android:textColor="@color/cardview_light_background"
-        android:editable="false"
         android:text="INICIAR PARTIDA"
         android:id="@+id/btn_home_init"/>
 
@@ -37,7 +36,7 @@
         android:layout_height="69dp"
         android:layout_marginLeft="135dp"
         android:layout_marginTop="40px"
-        android:textColor="@mipmap/background1"
+
         android:background="@android:color/holo_red_light"
         android:visibility="invisible"
         android:text="Login"

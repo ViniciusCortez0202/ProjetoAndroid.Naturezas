@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AlertDialog;
 
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.projeto.naturezas.R;
+import com.projeto.naturezas.services.MudarPontuacao;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -77,6 +81,16 @@ public class JogoActivity extends AppCompatActivity {
         }
 
         mostrarProximaQuestao();
+    }
+
+    public void mudarPontuacao(String pontuacao){
+
+        SharedPreferences sp = this.getSharedPreferences(this.getString(R.string.app_name), Context.MODE_PRIVATE);
+        int id = sp.getInt(this.getString(R.string.id_usuario), 0);
+        MudarPontuacao mp = new MudarPontuacao(JogoActivity.this);
+        if(id > 0) {
+            mp.execute(pontuacao);
+        }
     }
 
     public void mostrarProximaQuestao()
@@ -147,11 +161,10 @@ public class JogoActivity extends AppCompatActivity {
 
     public void mostrarResultado()
     {
+        mudarPontuacao(String.valueOf(contadorRespostaCerta));
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Resultado!");
         builder.setMessage(contadorRespostaCerta + "/10");
-        AtualizarPontuacaoActivity apa = new AtualizarPontuacaoActivity();
-        apa.mudarPontuacao(String.valueOf(contadorRespostaCerta));
         builder.setPositiveButton("Tente de novo", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

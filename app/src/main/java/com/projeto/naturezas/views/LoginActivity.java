@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.projeto.naturezas.R;
 import com.projeto.naturezas.services.*;
 import com.projeto.naturezas.models.Usuario;
@@ -29,8 +30,8 @@ public class LoginActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button button = findViewById(R.id.btn_login_logar);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button buttonLogar = findViewById(R.id.btn_login_logar);
+        buttonLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -46,6 +47,17 @@ public class LoginActivity extends AppCompatActivity{
 
             }
         });
+
+        FloatingActionButton buttonCriarConta = findViewById(R.id.login_fab);
+
+        buttonCriarConta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, CriarConta.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

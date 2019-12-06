@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.projeto.naturezas.R;
 import com.projeto.naturezas.models.Usuario;
+import com.projeto.naturezas.views.Home;
 import com.projeto.naturezas.views.LoginActivity;
 
 import org.json.JSONArray;
@@ -24,10 +25,10 @@ import java.util.List;
 
 public class Ranking extends AsyncTask<String, Object, String> {
 
-    WeakReference<AppCompatActivity> reference;
+    WeakReference<Home> reference;
 
     public Ranking(Context context){
-        this.reference = new WeakReference<AppCompatActivity>((AppCompatActivity) context);
+        this.reference = new WeakReference<Home>((Home) context);
     }
 
 
@@ -58,7 +59,6 @@ public class Ranking extends AsyncTask<String, Object, String> {
             }
             Intent intent = new Intent(this.reference.get(), Ranking.class);
             intent.putExtra(this.reference.get().getString(R.string.ranking_geral),(Serializable) usuario);
-            this.reference.get().startActivity(intent);
             this.reference.get().startActivity(intent);
 
         } catch (JSONException e) {

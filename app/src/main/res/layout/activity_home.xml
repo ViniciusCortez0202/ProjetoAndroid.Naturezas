@@ -39,7 +39,7 @@
         android:background="@android:color/holo_blue_dark"
         android:visibility="invisible"
         android:text="Login"
-        android:visibility="invisible" />
+        />
 
 
 

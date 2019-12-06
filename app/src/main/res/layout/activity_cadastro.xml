@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@mipmap/background1"
+        android:background=""
         android:gravity="center"
         android:text="Imagem"
         android:textColor="@color/cardview_light_background" />
@@ -25,7 +25,7 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/cardview_light_background">
+        android:background="">
 
     <EditText
         android:layout_marginTop="20dp"
@@ -57,13 +57,12 @@
             android:hint="Senha"/>
 </LinearLayout>
 
-    <EditText
+    <Button
         android:id="@+id/cadastro_botao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@mipmap/background1"
         android:gravity="center"
         android:text="CADASTRAR"
-        android:textColor="@color/cardview_light_background" />
+         />
 
 </LinearLayout>

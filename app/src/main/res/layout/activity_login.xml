@@ -33,8 +33,6 @@
         android:layout_width="match_parent"
         android:layout_height="69dp"
         android:layout_marginTop="10dp"
-        android:background="@mipmap/background1"
-        android:textColor="@color/cardview_light_background"
         android:editable="false"
         android:text="Logar" />
     </LinearLayout>

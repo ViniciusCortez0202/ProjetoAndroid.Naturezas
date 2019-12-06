@@ -20,17 +20,15 @@
 
 
         <activity android:name=".views.CadastrarActivity"></activity>
+        <activity android:name=".views.LoginActivity"></activity>
+        <activity android:name=".views.JogoActivity"></activity>
+        <activity android:name=".views.RankingActivity"></activity>
         <activity android:name=".views.Home">
-            <intent-filter>
-
-            </intent-filter>
-
-        </activity>
-        <activity android:name=".views.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
         <receiver

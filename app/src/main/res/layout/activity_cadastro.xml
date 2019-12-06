@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@mipmap/background3">
+
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/cadastro_imagem"
@@ -11,11 +13,19 @@
         android:src="@android:drawable/ic_menu_gallery" />
 
     <Button
+        android:id="@+id/cadastro_botao_imagem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@mipmap/background1"
+        android:gravity="center"
         android:text="Imagem"
-        android:id="@+id/cadastro_botao_imagem"/>
+        android:textColor="@color/cardview_light_background" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_light_background">
 
     <EditText
         android:layout_marginTop="20dp"
@@ -39,18 +49,21 @@
         android:id="@+id/cadastro_numero"
         android:hint="Número"
         />
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cadastro_senha"
+            android:hint="Senha"/>
+</LinearLayout>
+
     <EditText
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cadastro_senha"
-        android:hint="Senha"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/cadastro_botao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/background1"
+        android:gravity="center"
         android:text="CADASTRAR"
-        android:layout_marginTop="50dp"
-        />
+        android:textColor="@color/cardview_light_background" />
+
 </LinearLayout>

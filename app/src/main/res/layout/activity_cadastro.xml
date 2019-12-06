@@ -4,22 +4,15 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatImageView
-<<<<<<< Updated upstream
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/cadastro_imagem"
-=======
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:id="@+id/cadastro_imagem"
-        android:src="@android:drawable/ic_menu_gallery"
->>>>>>> Stashed changes
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="200dp"
         android:text="Imagem"
         android:id="@+id/cadastro_botao_imagem"/>
 

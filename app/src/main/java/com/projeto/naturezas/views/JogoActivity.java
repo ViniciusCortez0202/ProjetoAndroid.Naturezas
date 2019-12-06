@@ -19,6 +19,7 @@ import java.util.Random;
 
 public class JogoActivity extends AppCompatActivity {
     private TextView contarQuestao;
+    private TextView enunciadoQuestao;
     private ImageView imagemQuestao;
     private Button btn1;
     private Button btn2;
@@ -33,11 +34,16 @@ public class JogoActivity extends AppCompatActivity {
 
     String respostasDados[][] =
             {
-                    {"questao1", "Angular", "Tetraédrica", "Linear", "Trigonal"},
-                    {"questao2", "Reflexão", "Refração", "Ressonância", "Interferência"},
-                    {"questao3", "DNA", "Proteína", "Aminoácido", "RNA"},
-                    {"questao4", "Efeito Joule", "Calor", "Efeito Estufa", "Aquecimento Global"},
-                    {"questao5", "Benzeno", "Metano", "Etano", "Propano"}
+                    {"questao1", "Qual a Geometria Molecular da molécula acima?", "Angular", "Tetraédrica", "Linear", "Trigonal"},
+                    {"questao2", "Qual fenômeno físico é o descrito acima?", "Reflexão", "Refração", "Ressonância", "Interferência"},
+                    {"questao3", "Qual a molécula acima?", "DNA", "Proteína", "Aminoácido", "RNA"},
+                    {"questao4", "Que efeito físico está associado na imagem?", "Efeito Joule", "Efeito Doppler", "Efeito Estufa", "Aquecimento Global"},
+                    {"questao5", "Qual elemento químico acima?", "Benzeno", "Metano", "Etano", "Propano"},
+                    {"questao6", "Que conceito biológico está associado na imagem acima?", "Evolução", "Reprodução", "Mitose", "Meiose"},
+                    {"questao7", "Que conceito físico está associado na imagem acima?", "Torque", "Quantidade de movimento", "Impulso", "Energia"},
+                    {"questao8", "Do que se trata a imagem?", "Laboratório de Química", "Laboratório de Física", "Laboratório de Biologia", "Laboratório de Geologia"},
+                    {"questao9", "A imagem se refere ao que?", "Cladograma", "Fluxograma", "Calendário", "Organograma"},
+                    {"questao10", "Que ciência é essa?", "Física", "Química", "Biologia", "Matemática"}
 
 
             };
@@ -51,6 +57,7 @@ public class JogoActivity extends AppCompatActivity {
 
         contarQuestao = findViewById(R.id.contarQuestao);
         imagemQuestao = findViewById(R.id.idImagem);
+        enunciadoQuestao = findViewById(R.id.pergunta);
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
         btn3 = findViewById(R.id.btn3);
@@ -64,6 +71,7 @@ public class JogoActivity extends AppCompatActivity {
             dados.add(respostasDados[i][2]);
             dados.add(respostasDados[i][3]);
             dados.add(respostasDados[i][4]);
+            dados.add(respostasDados[i][5]);
 
             questoes.add(dados);
         }
@@ -81,8 +89,13 @@ public class JogoActivity extends AppCompatActivity {
         ArrayList<String> quiz = questoes.get(randomNumero);
 
         imagemQuestao.setImageResource(getResources().getIdentifier(quiz.get(0), "drawable", getPackageName()));
-        respostaCerta = quiz.get(1);
+        enunciadoQuestao.setText(quiz.get(1));
+        respostaCerta = quiz.get(2);
+
         quiz.remove(0);
+        quiz.remove(0);
+
+
         Collections.shuffle(quiz);
 
         btn1.setText(quiz.get(0));
@@ -135,7 +148,7 @@ public class JogoActivity extends AppCompatActivity {
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Resultado!");
-        builder.setMessage(contadorRespostaCerta + "/5");
+        builder.setMessage(contadorRespostaCerta + "/10");
         builder.setPositiveButton("Tente de novo", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

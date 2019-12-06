@@ -3,7 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@mipmap/background3">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="120dp"
+    android:background="@android:color/white">
 
     <EditText
         android:layout_marginTop="10dp"
@@ -13,7 +22,7 @@
         android:hint="Digite seu e-mail" />
 
     <EditText
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/login_senha"
@@ -23,10 +32,12 @@
         android:id="@+id/btn_login_logar"
         android:layout_width="match_parent"
         android:layout_height="69dp"
-        android:layout_marginTop="160dp"
-        android:background="@android:color/holo_blue_dark"
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/background1"
+        android:textColor="@color/cardview_light_background"
         android:editable="false"
         android:text="Logar" />
+    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/login_fab"

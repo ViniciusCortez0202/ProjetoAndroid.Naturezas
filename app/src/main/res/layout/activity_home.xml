@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@mipmap/background1">
+    android:background="@mipmap/background3">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="302dp"
@@ -25,7 +25,8 @@
         android:layout_height="69dp"
         android:layout_marginLeft="135dp"
         android:layout_marginTop="40px"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@mipmap/background1"
+        android:textColor="@color/cardview_light_background"
         android:editable="false"
         android:text="INICIAR PARTIDA"
         android:id="@+id/btn_home_init"/>
@@ -36,7 +37,8 @@
         android:layout_height="69dp"
         android:layout_marginLeft="135dp"
         android:layout_marginTop="40px"
-        android:background="@android:color/holo_blue_dark"
+        android:textColor="@mipmap/background1"
+        android:background="@android:color/holo_red_light"
         android:visibility="invisible"
         android:text="Login"
         />

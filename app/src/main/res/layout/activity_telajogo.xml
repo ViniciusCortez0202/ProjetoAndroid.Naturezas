@@ -8,15 +8,17 @@
     tools:context=".views.JogoActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@android:color/white">
+    android:background="@mipmap/background3">
 
     <TextView
         android:id="@+id/contarQuestao"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@mipmap/background1"
+        android:gravity="center"
         android:text="Questão 1"
-        android:textSize="22sp"
-        />
+        android:textColor="@color/cardview_light_background"
+        android:textSize="22sp" />
 
     <ImageView
         android:id="@+id/idImagem"
@@ -39,6 +41,8 @@
         android:layout_height="60dp"
         android:text="Resposta 1"
         android:onClick="checarQuestao"
+        android:textColor="@color/cardview_light_background"
+        android:background="@mipmap/background1"
         />
 
     <Button
@@ -47,6 +51,8 @@
         android:layout_height="60dp"
         android:text="Resposta 2"
         android:onClick="checarQuestao"
+        android:textColor="@color/cardview_light_background"
+        android:background="@mipmap/background1"
         />
 
     <Button
@@ -55,6 +61,9 @@
         android:layout_height="60dp"
         android:text="Resposta 3"
         android:onClick="checarQuestao"
+        android:textColor="@color/cardview_light_background"
+        android:background="@mipmap/background1"
+
         />
 
 
@@ -64,6 +73,8 @@
         android:layout_height="60dp"
         android:text="Resposta 4"
         android:onClick="checarQuestao"
+        android:textColor="@color/cardview_light_background"
+        android:background="@mipmap/background1"
         />
 
 </LinearLayout>

@@ -99,7 +99,15 @@ public class Home extends AppCompatActivity {
 
         if(id_item == R.id.menu_ranking){
             Ranking ranking = new Ranking(this);
+<<<<<<< HEAD
             ranking.execute();
+=======
+        } else if (id_item == R.id.menu_deslogar) {
+            SharedPreferences sp = this.getSharedPreferences(this.getString(R.string.app_name), Context.MODE_PRIVATE);
+            sp.edit().clear().commit();
+            finishAffinity();
+            System.exit(0);
+>>>>>>> 1eda225138e9d787d1eb97871faa3de61948bbc7
         }
 
         return super.onOptionsItemSelected(item);

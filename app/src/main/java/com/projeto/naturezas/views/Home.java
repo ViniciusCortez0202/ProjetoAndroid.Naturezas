@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -20,7 +21,7 @@ public class Home extends AppCompatActivity {
     private final int REQUEST_CODE_PERMISSION_SMS = 10;
 
     public Home(){
-        this.verificarLogin();
+
     }
 
     @Override
@@ -28,6 +29,26 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         this.verificarPermissao();
+        this.verificarLogin();
+
+        Button buttonHomeLogin = findViewById(R.id.btn_home_login);
+        Button buttonHomePartida = findViewById(R.id.btn_home_init);
+
+        buttonHomeLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        buttonHomePartida.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, JogoActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

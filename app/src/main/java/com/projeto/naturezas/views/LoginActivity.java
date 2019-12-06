@@ -11,6 +11,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.projeto.naturezas.R;
@@ -25,11 +28,29 @@ public class LoginActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Button button = findViewById(R.id.btn_login_logar);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Recuperar email
+                EditText editTextEmail = findViewById(R.id.login_email);
+                String email = editTextEmail.getText().toString();
+
+                //Recuperar senha
+                EditText editTextSenha = findViewById(R.id.login_senha);
+                String senha = editTextSenha.getText().toString();
+
+                logar(email, senha);
+
+            }
+        });
     }
 
 
     private void logar(String email, String senha){
-        Logar login = new Logar(this);
+        Logar login = new Logar(LoginActivity.this);
         login.execute(email, senha);
     }
 

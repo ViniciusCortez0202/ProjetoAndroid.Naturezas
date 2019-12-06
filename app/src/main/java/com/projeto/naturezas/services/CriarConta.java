@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.projeto.naturezas.R;
 import com.projeto.naturezas.models.Usuario;
-import com.projeto.naturezas.views.CriarContaActivity;
+import com.projeto.naturezas.views.CadastrarActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,10 +16,10 @@ import java.lang.ref.WeakReference;
 
 public class CriarConta extends AsyncTask<Usuario, Object, String> {
 
-    WeakReference<CriarContaActivity> reference;
+    WeakReference<CadastrarActivity> reference;
 
     public CriarConta(Context context){
-        this.reference = new WeakReference<CriarContaActivity>((CriarContaActivity) context);
+        this.reference = new WeakReference<CadastrarActivity>((CadastrarActivity) context);
     }
 
 
@@ -30,7 +30,7 @@ public class CriarConta extends AsyncTask<Usuario, Object, String> {
 
         RequiresHttp require = new RequiresHttp();
         String res = require.criarContaUsuario(usuario.getNome(), usuario.getEmail(),
-               usuario.getSenha(), usuario.getNumero());
+               usuario.getSenha(), usuario.getNumero(), usuario.getFoto());
 
         return res;
     }

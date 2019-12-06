@@ -47,7 +47,10 @@ public class CadastrarActivity extends AppCompatActivity {
                 EditText editTextSenha = findViewById(R.id.cadastro_senha);
                 String senha = editTextNumero.getText().toString();
 
-                Usuario usuario = new Usuario(nome, email, numero, senha);
+                //Recuper os dados da foto
+                String foto = "";
+
+                Usuario usuario = new Usuario(nome, email, numero, senha, foto);
 
                 cadastrarUsuario(usuario);
 

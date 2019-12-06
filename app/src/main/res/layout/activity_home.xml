@@ -36,7 +36,7 @@
         android:layout_marginLeft="135dp"
         android:layout_marginTop="40px"
         android:background="@android:color/holo_blue_dark"
-        android:editable="false"
+        android:visibility="invisible"
         android:text="Login"
         android:id="@+id/btn_login"/>
 

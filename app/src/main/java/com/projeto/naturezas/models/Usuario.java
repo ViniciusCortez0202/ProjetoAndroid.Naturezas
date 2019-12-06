@@ -9,21 +9,24 @@ public class Usuario implements Serializable {
     private int id;
     private String numero;
     private String senha;
+    private String foto;
 
-    public Usuario(String nome, String email, int pontuacao, int id, String numero, String senha) {
+    public Usuario(String nome, String email, int pontuacao, int id, String numero, String senha, String foto) {
         this.nome = nome;
         this.email = email;
         this.pontuacao = pontuacao;
         this.id = id;
         this.numero = numero;
         this.senha = senha;
+        this.foto = foto
     }
 
-    public Usuario(String nome, String email, String numero, String senha) {
+    public Usuario(String nome, String email, String numero, String senha, String foto) {
         this.nome = nome;
         this.email = email;
         this.numero = numero;
         this.senha = senha;
+        this.foto = foto;
     }
 
     public Usuario() {
@@ -75,5 +78,13 @@ public class Usuario implements Serializable {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 }

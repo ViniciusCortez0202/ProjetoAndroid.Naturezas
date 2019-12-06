@@ -75,7 +75,7 @@ public class RequiresHttp {
         return response;
     }
 
-    public String criarContaUsuario(String nome, String email, String senha, String celular) {
+    public String criarContaUsuario(String nome, String email, String senha, String celular, String foto) {
 
 
         try {
@@ -86,7 +86,7 @@ public class RequiresHttp {
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 
-            String body = "nome=" + nome + "&email=" + email + "&senha=" + senha + "&numero=" + celular;
+            String body = "nome=" + nome + "&email=" + email + "&senha=" + senha + "&numero=" + celular + "&foto=" + foto;
 
             conn.getOutputStream().write(body.getBytes());
 

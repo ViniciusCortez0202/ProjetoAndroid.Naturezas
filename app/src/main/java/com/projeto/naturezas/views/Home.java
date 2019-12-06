@@ -9,6 +9,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.projeto.naturezas.R;
@@ -17,12 +19,15 @@ public class Home extends AppCompatActivity {
 
     private final int REQUEST_CODE_PERMISSION_SMS = 10;
 
+    public Home(){
+        this.verificarLogin();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         this.verificarPermissao();
-        this.verificarLogin();
     }
 
 
@@ -34,6 +39,8 @@ public class Home extends AppCompatActivity {
             Toast.makeText(this, "Bem Vindo(a) " + nomeUsuario, Toast.LENGTH_LONG).show();
         } else {
             //Ativar botão de login
+            Button buttonLogin = findViewById(R.id.btn_login);
+            buttonLogin.setVisibility(View.VISIBLE);
         }
 
     }

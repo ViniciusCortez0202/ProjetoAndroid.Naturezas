@@ -92,12 +92,13 @@ public class JogoActivity extends AppCompatActivity {
         enunciadoQuestao.setText(quiz.get(1));
         respostaCerta = quiz.get(2);
 
+        // Remove a imagem e a pergunta
         quiz.remove(0);
         quiz.remove(0);
 
 
         Collections.shuffle(quiz);
-
+        //Transfere a resposta
         btn1.setText(quiz.get(0));
         btn2.setText(quiz.get(1));
         btn3.setText(quiz.get(2));

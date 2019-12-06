@@ -7,4 +7,5 @@
     <string name="email_usuario">email</string>
     <string name="numero_confirmacao">confirmacao</string>
     <string name="usuario_logado">login</string>
+    <string name="ranking_geral">ranking</string>
 </resources>

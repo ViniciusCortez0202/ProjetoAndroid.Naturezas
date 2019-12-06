@@ -1,6 +1,8 @@
 package com.projeto.naturezas.models;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
     private String nome;
     private String email;
     private int pontuacao;

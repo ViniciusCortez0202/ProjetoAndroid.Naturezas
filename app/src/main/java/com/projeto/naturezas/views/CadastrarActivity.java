@@ -80,7 +80,7 @@ public class CadastrarActivity extends AppCompatActivity {
 
                 //Recupera os dados em senha
                 EditText editTextSenha = findViewById(R.id.cadastro_senha);
-                String senha = editTextNumero.getText().toString();
+                String senha = editTextSenha.getText().toString();
 
                 //Recuper os dados da foto
 

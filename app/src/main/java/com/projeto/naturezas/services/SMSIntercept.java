@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 
 import com.projeto.naturezas.R;
+import com.projeto.naturezas.views.CadastrarActivity;
+import com.projeto.naturezas.views.LoginActivity;
 
 import java.nio.charset.CharacterCodingException;
 
@@ -56,6 +58,8 @@ public class SMSIntercept extends BroadcastReceiver {
 
                 if(numeroConfirmacao.equalsIgnoreCase(numeroConfirmacaoMensagem)){
                     Toast.makeText(context, "Número de confirmação aceito", Toast.LENGTH_LONG).show();
+                    Intent intent1 = new Intent(context.getApplicationContext() ,LoginActivity.class);
+                    context.startActivity(intent);
                 } else {
                     Toast.makeText(context, "Erro ao confirmar número", Toast.LENGTH_LONG);
                 }

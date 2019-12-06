@@ -56,6 +56,7 @@ public class AdapterRanking extends BaseAdapter {
         TextView textViewItemPontuacao = view.findViewById(R.id.item_usuario_pontuacao);
 
         imageViewItem.setImageBitmap(decodedByte);
+        imageViewItem.setTag(1);
         textViewItemNome.setText(usuario.getNome());
         textViewItemPontuacao.setText(usuario.getPontuacao());
 

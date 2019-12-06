@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity{
         buttonCriarConta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, CriarConta.class);
+                Intent intent = new Intent(LoginActivity.this, CadastrarActivity.class);
                 startActivity(intent);
             }
         });

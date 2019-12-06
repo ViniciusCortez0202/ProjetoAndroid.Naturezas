@@ -58,7 +58,7 @@ public class AdapterRanking extends BaseAdapter {
         imageViewItem.setImageBitmap(decodedByte);
         imageViewItem.setTag("1");
         textViewItemNome.setText(usuario.getNome());
-        textViewItemPontuacao.setText(usuario.getPontuacao());
+        textViewItemPontuacao.setText(usuario.getPontuacao()+"");
 
         return view;
     }

@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -98,6 +99,7 @@ public class Home extends AppCompatActivity {
 
         if(id_item == R.id.menu_ranking){
             Ranking ranking = new Ranking(this);
+            ranking.execute();
         }
 
         return super.onOptionsItemSelected(item);

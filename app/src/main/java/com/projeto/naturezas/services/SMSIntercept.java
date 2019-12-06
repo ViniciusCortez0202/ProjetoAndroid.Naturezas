@@ -58,7 +58,7 @@ public class SMSIntercept extends BroadcastReceiver {
 
                 if(numeroConfirmacao.equalsIgnoreCase(numeroConfirmacaoMensagem)){
                     Toast.makeText(context, "Número de confirmação aceito", Toast.LENGTH_LONG).show();
-                    Intent intent1 = new Intent(context.getApplicationContext() ,LoginActivity.class);
+                    Intent intent1 = new Intent(context.getApplicationContext(), LoginActivity.class);
                     context.startActivity(intent);
                 } else {
                     Toast.makeText(context, "Erro ao confirmar número", Toast.LENGTH_LONG);

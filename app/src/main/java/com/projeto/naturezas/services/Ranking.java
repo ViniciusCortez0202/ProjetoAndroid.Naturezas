@@ -13,6 +13,7 @@ import com.projeto.naturezas.R;
 import com.projeto.naturezas.models.Usuario;
 import com.projeto.naturezas.views.Home;
 import com.projeto.naturezas.views.LoginActivity;
+import com.projeto.naturezas.views.RankingActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -51,14 +52,15 @@ public class Ranking extends AsyncTask<String, Object, String> {
             if(json.length() > 0){
                 for (int i = 0; i < json.length(); i++){
                     Usuario u = new Usuario();
-                    String foto = json.getJSONObject(i).getString("usu_foto");
-                    u.setFoto(foto);
-                    u.setNome(json.getJSONObject(i).getString("usu_nome"));
-                    u.setPontuacao( json.getJSONObject(i).getInt("usu_pontuacao"));
+                    
+                    u.setFoto(json.getJSONObject(i).getString("foto"));
+                    u.setNome(json.getJSONObject(i).getString("nome"));
+                    u.setPontuacao( json.getJSONObject(i).getInt("pontuacao"));
                     usuario.add(u);
                 }
             }
-            Intent intent = new Intent(this.reference.get(), Ranking.class);
+            Log.i("valor", s);
+            Intent intent = new Intent(this.reference.get(), RankingActivity.class);
             intent.putExtra(this.reference.get().getString(R.string.ranking_geral),(Serializable) usuario);
             this.reference.get().startActivity(intent);
 

@@ -39,6 +39,7 @@ public class Logar extends AsyncTask<String, Object, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
+        Log.i("valor", s);
         s = s.substring(1, s.length()-2);
         try {
             JSONObject json = new JSONObject(s);

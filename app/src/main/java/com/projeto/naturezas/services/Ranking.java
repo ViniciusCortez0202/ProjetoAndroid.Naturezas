@@ -51,7 +51,8 @@ public class Ranking extends AsyncTask<String, Object, String> {
             if(json.length() > 0){
                 for (int i = 0; i < json.length(); i++){
                     Usuario u = new Usuario();
-                    u.setFoto(json.getJSONObject(i).getString("usu_foto"));
+                    String foto = json.getJSONObject(i).getString("usu_foto");
+                    u.setFoto(foto);
                     u.setNome(json.getJSONObject(i).getString("usu_nome"));
                     u.setPontuacao( json.getJSONObject(i).getInt("usu_pontuacao"));
                     usuario.add(u);

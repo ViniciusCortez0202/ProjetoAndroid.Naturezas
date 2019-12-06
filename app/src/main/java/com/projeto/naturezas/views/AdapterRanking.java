@@ -48,7 +48,7 @@ public class AdapterRanking extends BaseAdapter {
 
         Usuario usuario = usuarioList.get(position);
 
-        byte[] decodedString = Base64.decode(usuario.getFoto(), Base64.DEFAULT);
+        byte[] decodedString = usuario.getFoto().getBytes();
         Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
 
         ImageView imageViewItem = view.findViewById(R.id.item_usuario_img);
@@ -56,7 +56,7 @@ public class AdapterRanking extends BaseAdapter {
         TextView textViewItemPontuacao = view.findViewById(R.id.item_usuario_pontuacao);
 
         imageViewItem.setImageBitmap(decodedByte);
-        imageViewItem.setTag(1);
+        imageViewItem.setTag("1");
         textViewItemNome.setText(usuario.getNome());
         textViewItemPontuacao.setText(usuario.getPontuacao());
 

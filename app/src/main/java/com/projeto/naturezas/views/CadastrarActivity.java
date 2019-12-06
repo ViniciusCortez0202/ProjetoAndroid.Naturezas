@@ -85,7 +85,7 @@ public class CadastrarActivity extends AppCompatActivity {
                 //Recuper os dados da foto
 
 
-                Usuario usuario = new Usuario(nome, email, numero, senha, "teste");
+                Usuario usuario = new Usuario(nome, email, numero, senha,  stringBase64);
 
                 cadastrarUsuario(usuario);
 
@@ -114,7 +114,7 @@ public class CadastrarActivity extends AppCompatActivity {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         byte[] byteArray = stream.toByteArray();
-        this.stringBase64 = Base64.encodeToString(byteArray, 0);
+        this.stringBase64 = byteArray.toString();
     }
 
 }

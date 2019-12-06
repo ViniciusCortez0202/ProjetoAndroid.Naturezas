@@ -150,6 +150,8 @@ public class JogoActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Resultado!");
         builder.setMessage(contadorRespostaCerta + "/10");
+        AtualizarPontuacaoActivity apa = new AtualizarPontuacaoActivity();
+        apa.mudarPontuacao(String.valueOf(contadorRespostaCerta));
         builder.setPositiveButton("Tente de novo", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

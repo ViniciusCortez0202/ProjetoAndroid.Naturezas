@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.projeto.naturezas.views.JogoActivity;
 import com.projeto.naturezas.views.LoginActivity;
 
 import org.json.JSONException;
@@ -14,12 +15,12 @@ import java.lang.ref.WeakReference;
 
 public class MudarPontuacao extends AsyncTask<String, Object, String> {
 
-    private WeakReference<LoginActivity> reference;
+    private WeakReference<JogoActivity> reference;
 
     public MudarPontuacao(Context context) {
 
-        this.reference = new WeakReference<LoginActivity>(
-                (LoginActivity) context);
+        this.reference = new WeakReference<JogoActivity>(
+                (JogoActivity) context);
     }
 
     @Override
@@ -37,25 +38,19 @@ public class MudarPontuacao extends AsyncTask<String, Object, String> {
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
 
-            if(s.length() != 3){
+        try {
+            JSONObject json = new JSONObject(s);
 
-                try {
-                    JSONObject json = new JSONObject(s);
-
-                    if(json.has("mensagem")){
-                        String res = json.getString("mensagem");
-                        Toast.makeText(reference.get(), res, Toast.LENGTH_LONG).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }else {
-                //Intent intent = new Intent(this.reference.get().getClass();
-                Toast.makeText(reference.get(), "Pontuacao Mudou", Toast.LENGTH_LONG).show();
+            if(json.has("mensagem")){
+                String res = json.getString("mensagem");
+                Toast.makeText(reference.get(), res, Toast.LENGTH_LONG).show();
+            } else {
+                String res = json.getString("confimacao");
+                Toast.makeText(reference.get(), res, Toast.LENGTH_LONG).show();
             }
-
-
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 

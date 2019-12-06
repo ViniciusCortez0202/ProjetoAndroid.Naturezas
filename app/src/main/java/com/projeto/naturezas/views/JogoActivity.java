@@ -89,7 +89,7 @@ public class JogoActivity extends AppCompatActivity {
         int id = sp.getInt(this.getString(R.string.id_usuario), 0);
         MudarPontuacao mp = new MudarPontuacao(JogoActivity.this);
         if(id > 0) {
-            mp.execute(pontuacao);
+            mp.execute(id + "", pontuacao);
         }
     }
 

@@ -52,14 +52,14 @@ public class Ranking extends AsyncTask<String, Object, String> {
             if(json.length() > 0){
                 for (int i = 0; i < json.length(); i++){
                     Usuario u = new Usuario();
-                    
+
                     u.setFoto(json.getJSONObject(i).getString("foto"));
                     u.setNome(json.getJSONObject(i).getString("nome"));
                     u.setPontuacao( json.getJSONObject(i).getInt("pontuacao"));
                     usuario.add(u);
                 }
             }
-            Log.i("valor", s);
+
             Intent intent = new Intent(this.reference.get(), RankingActivity.class);
             intent.putExtra(this.reference.get().getString(R.string.ranking_geral),(Serializable) usuario);
             this.reference.get().startActivity(intent);

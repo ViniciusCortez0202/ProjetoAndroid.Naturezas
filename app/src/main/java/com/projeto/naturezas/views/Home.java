@@ -39,7 +39,7 @@ public class Home extends AppCompatActivity {
             Toast.makeText(this, "Bem Vindo(a) " + nomeUsuario, Toast.LENGTH_LONG).show();
         } else {
             //Ativar botão de login
-            Button buttonLogin = findViewById(R.id.btn_login);
+            Button buttonLogin = findViewById(R.id.btn_home_login);
             buttonLogin.setVisibility(View.VISIBLE);
         }
 
